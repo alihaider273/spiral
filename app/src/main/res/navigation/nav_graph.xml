@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.app.spiral.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.spiral.ui.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/callerIDFragment"
+        android:name="com.app.spiral.CallerIDFragment"
+        tools:layout="@layout/fragment_caller_id" />
+    <fragment
+        android:id="@+id/passKeyFragment"
+        android:name="com.app.spiral.PasskeyFragment"
+        tools:layout="@layout/fragment_passkey" />
+    <fragment
+        android:id="@+id/authSuccessFragment"
+        android:name="com.app.spiral.AuthSuccessFragment"
+        tools:layout="@layout/fragment_auth_success" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.app.spiral.EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/pinViewFragment"
+        android:name="com.app.spiral.PinViewFragment"
+        tools:layout="@layout/fragment_pin_view" />
+
+
+
+</navigation>

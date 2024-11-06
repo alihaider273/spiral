@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="see_green">#05FBF3</color>
+    <color name="hint_color">#BCBEC0</color>
+    <color name="navy_blue">#003465</color>
+    <color name="grey">#C4C4C4</color>
+    <color name="black_light">#272727</color>
+    <color name="caller">#38D79F</color>
+    <color name="caller_bg">#EFFCF7</color>
+    <color name="credit">#FF6E66</color>
+    <color name="credit_bg">#FFF3F3</color>
+    <color name="bank_transfer">#FFC633</color>
+    <color name="bank_transfer_bg">#EFF0FC</color>
+    <color name="money">#6B75FF</color>
+    <color name="chart">#6D5FFE</color>
+    <color name="light_blue">#4894FE</color>
+    <color name="bbdefb">#BBDEFB</color>
+</resources>

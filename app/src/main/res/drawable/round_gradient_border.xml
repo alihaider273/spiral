@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer Gradient Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0A94F8"
+                android:centerColor="#C876C9"
+                android:endColor="#FF6E91"
+                android:angle="0"
+                android:type="sweep" />
+            <corners android:radius="22dp" /> <!-- Adjust radius for rounded corners -->
+        </shape>
+    </item>
+
+    <!-- Inner Rounded Square (Background) -->
+    <item android:left="2dp" android:right="2dp" android:top="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Inner background color, can be transparent or any color -->
+            <corners android:radius="20dp" /> <!-- Slightly smaller radius to fit inside the border -->
+        </shape>
+    </item>
+
+</layer-list>

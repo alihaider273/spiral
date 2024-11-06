@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvGoodMorning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/good_morning"
+                android:textColor="#1E293B"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Jane"
+                android:textColor="#1E293B"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGoodMorning" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_gradient_border"
+                app:layout_constraintBottom_toBottomOf="@+id/tvName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvGoodMorning">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:listitem="@layout/item_stories" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/drLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="13dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_card_background"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout">
+            <!-- Doctor Profile Image -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewDoctor"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/doctor_profile_placeholder"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" /> <!-- Circular white background for the image -->
+
+            <!-- Doctor Name -->
+            <TextView
+                android:id="@+id/textViewDoctorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imageViewDoctor"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/imageViewDoctor"
+                android:text="@string/dr_a_syahir"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Doctor Specialty -->
+            <TextView
+                android:id="@+id/textViewSpecialty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewDoctorName"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@id/imageViewDoctor"
+                android:text="@string/general_doctor"
+                android:textColor="@color/bbdefb"
+                android:textSize="14sp" />
+
+            <!-- Arrow Icon -->
+            <ImageView
+                android:id="@+id/imageViewArrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/textViewDoctorName"
+                android:layout_alignBottom="@+id/textViewSpecialty"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_arrow_right"
+                app:tint="@android:color/white" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imageViewDoctor"
+                android:layout_marginTop="16dp"
+                android:background="#BBDEFB" />
+
+            <ImageView
+                android:id="@+id/imageViewDateIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/imageViewDoctor"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="@android:color/white" />
+
+            <!-- Appointment Date Text -->
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imageViewDateIcon"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/imageViewDateIcon"
+                android:text="@string/sunday_12_june"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <!-- Appointment Time Icon -->
+            <ImageView
+                android:id="@+id/imageViewTimeIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@id/imageViewDateIcon"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@id/textViewDate"
+                android:src="@drawable/ic_clock"
+                app:tint="@android:color/white" />
+
+            <!-- Appointment Time Text -->
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imageViewTimeIcon"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/imageViewTimeIcon"
+                android:text="@string/_11_00_12_00_am"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/categoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drLayout">
+
+            <!-- Category Title -->
+            <TextView
+                android:id="@+id/textViewCategoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category"
+                android:textColor="@color/black_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Flow Layout for Categories -->
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start">
+
+                <!-- Meeting Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/category_meeting_background"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/meeting"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/round_yellow_circle" />
+
+                <!-- Hangout Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/category_hangout_background"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/hangout"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/round_hangout_circle" />
+
+                <!-- Cooking Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/category_cooking_background"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="6dp"
+                    android:paddingLeft="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/cooking"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/round_cooking_circle" />
+
+                <!-- Other Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/category_other_background"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/other"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/round_other_circle"
+                    tools:ignore="RtlSymmetry" />
+
+                <!-- Weekend Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/category_weekend_background"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/weekend"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/round_weekend_circle" />
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frequentUsedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categoryLayout">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFrequentUsed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/frequently_used"
+                android:textSize="18sp"
+                android:textColor="@color/black_light"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvViewAllFrequentUsed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvViewAllFrequentUsed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="@string/view_all"
+                android:textColor="@color/light_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFrequentUsedService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvFrequentUsed"
+                tools:listitem="@layout/item_service" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ServiceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frequentUsedLayout">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/financial_services"
+                android:textSize="18sp"
+                android:textColor="@color/black_light"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvViewAllService"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvViewAllService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="@string/view_all"
+                android:textColor="@color/light_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvService"
+                tools:listitem="@layout/item_service" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
